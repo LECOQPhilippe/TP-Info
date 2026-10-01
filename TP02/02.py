@@ -1,3 +1,4 @@
+'''
 import copy
 
 a = ['A']
@@ -48,16 +49,54 @@ classDict["class"]["student"].append({
     }
 })
 
-print(classDict["class"]["student"])
+
+moy= []
+
+for student in classDict['class']['student']:
+    moy.append(student['average'])
+
+classDict['class']['average_grade'] = sum(moy)/len(moy) 
 
 
 
+print(classDict)
+
+'''
 
 
 
+import random
+
+def isAllUniq(collect):
+    return len(set(collect)) == len(collect)
+
+lst = []
+lst_test = [1,1,2,3]
+for i in range(random.randint(2,100)):
+    lst.append(random.randint(0,500))
+
+print(isAllUniq(lst_test))
+print(isAllUniq(lst))
+
+def Score(ops):
+    pile = []
+    for op in ops:
+        if op == '+':
+            if len(pile) > 1:
+                pile.append(pile[-1] + pile[-2])
+            else:
+                pile.append(pile[-1])
+        elif op == 'C':
+            pile.pop()
+        elif op == 'D':
+            pile.append(2 * pile[-1])
+        else:
+            pile.append(int(op))
+
+    return sum(pile)
 
 
-
+print(Score(["10", "+", "2", "C", "D", "+"]))
 
 
 
