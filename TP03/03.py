@@ -113,3 +113,8 @@ print ("La suite de Syraccus de nombre ",a," est : ",Syraccus(a),".")
 
 
 
+
+
+
+
+
